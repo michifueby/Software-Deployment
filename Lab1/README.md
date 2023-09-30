@@ -4,7 +4,7 @@ ARM Template:
 - Deploys an Azure Storage Account (Free Tier)
 - Deploys an Azure Web-App (Free Tier) <br>
 
-1. For the deployment you must have the Azure CLI (or alternatively Azure PowerShell) installed. 
+1. For the deployment you must have the Azure CLI (or alternatively Azure PowerShell) installed. <br>
 Use of the [Azure CLI Docs](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) <br><br>
 
 2. To log in to your account through the Azure CLI use the following command:
@@ -19,7 +19,7 @@ Use of the [Azure CLI Docs](https://learn.microsoft.com/en-us/cli/azure/install-
     az group create --name <rgName> --location <example: 'westeurope'>
 ```
 ![Resource Group](../Lab1/img/resource-group.png)
-The following documentation was used for the use of the CLI command: 
+The following documentation was used for the use of the CLI command: <br>
 [Azure CLI Resource Groups Docs](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-cli)
 
 
@@ -34,9 +34,9 @@ az deployment group create --resource-group <rgName> --template-file "azuredeplo
 ![Successful Deployment](../Lab1/img/web-site.png)
 
 The following documentation was used for the correct use of ARM templates: 
-[ARM template Docs](https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview)
-[ARM template Storage-Account Docs](https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts?pivots=deployment-language-arm-template)
-[ARM template Web serverfarms Docs](https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms?pivots=deployment-language-arm-template)
+[ARM template Docs](https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview)<br>
+[ARM template Storage-Account Docs](https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts?pivots=deployment-language-arm-template)<br>
+[ARM template Web serverfarms Docs](https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms?pivots=deployment-language-arm-template)<br>
 [ARM template Web sites Docs](https://learn.microsoft.com/en-us/azure/templates/microsoft.web/sites?pivots=deployment-language-arm-template)
 
 
