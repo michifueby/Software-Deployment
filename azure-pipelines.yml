@@ -12,7 +12,7 @@ variables:
   azureSubscription: 'b22484e0-dd2a-4023-b23b-25801a6ba2ac'
 
   # Web app name
-  webAppName: 'MFWebApp'
+  webAppName: 'mfwebappnodejs'
 
   # Environment name
   environmentName: 'mf'
