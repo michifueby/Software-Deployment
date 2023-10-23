@@ -43,6 +43,7 @@ stages:
       workingDirectory: '$(System.DefaultWorkingDirectory)/Lab2/app'
 
     - task: PublishTestResults@2
+      condition: succeededOrFailed()
       inputs:
         testResultsFormat: 'JUnit'
         testResultsFiles: 'test-results.xml'
