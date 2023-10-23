@@ -23,7 +23,7 @@ describe("add", function() {
 // Tests the isNumberEven function
 describe('isNumberEven', function() {
   it('should return true for an even number', function() {
-    assert.strictEqual(testLogic.isNumberEven(2), false);
+    assert.strictEqual(testLogic.isNumberEven(2), true);
   });
 
   it('should return false for an odd number', function() {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.006" tests="9" failures="1">
-  <testsuite name="Root Suite" timestamp="2023-10-23T17:43:12" tests="0" time="0.000" failures="0">
+<testsuites name="Mocha Tests" time="0.003" tests="9" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-10-23T17:59:07" tests="0" time="0.000" failures="0">
   </testsuite>
-  <testsuite name="add" timestamp="2023-10-23T17:43:12" tests="4" file="/Users/michaelfuby/Library/Mobile Documents/com~apple~CloudDocs/Documents/FH/5 Semester/Software Deployment/Übung/Software-Deployment/Lab2/app/test/tests.js" time="0.001" failures="0">
+  <testsuite name="add" timestamp="2023-10-23T17:59:07" tests="4" file="/Users/michaelfuby/Library/Mobile Documents/com~apple~CloudDocs/Documents/FH/5 Semester/Software Deployment/Übung/Software-Deployment/Lab2/app/test/tests.js" time="0.001" failures="0">
     <testcase name="add should return 10 when adding 6 and 4" time="0.000" classname="should return 10 when adding 6 and 4">
     </testcase>
     <testcase name="add should return -5 when adding 0 and -5" time="0.000" classname="should return -5 when adding 0 and -5">
@@ -12,23 +12,8 @@
     <testcase name="add should return 20 when adding 10 and 10" time="0.000" classname="should return 20 when adding 10 and 10">
     </testcase>
   </testsuite>
-  <testsuite name="isNumberEven" timestamp="2023-10-23T17:43:12" tests="5" file="/Users/michaelfuby/Library/Mobile Documents/com~apple~CloudDocs/Documents/FH/5 Semester/Software Deployment/Übung/Software-Deployment/Lab2/app/test/tests.js" time="0.003" failures="1">
-    <testcase name="isNumberEven should return true for an even number" time="0.001" classname="should return true for an even number">
-      <failure message="Expected values to be strictly equal:
-
-true !== false
-" type="AssertionError"><![CDATA[AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-
-true !== false
-
-    at Context.<anonymous> (test/tests.js:26:12)
-    at processImmediate (node:internal/timers:466:21)
-
-      + expected - actual
-
-      -true
-      +false
-      ]]></failure>
+  <testsuite name="isNumberEven" timestamp="2023-10-23T17:59:07" tests="5" file="/Users/michaelfuby/Library/Mobile Documents/com~apple~CloudDocs/Documents/FH/5 Semester/Software Deployment/Übung/Software-Deployment/Lab2/app/test/tests.js" time="0.000" failures="0">
+    <testcase name="isNumberEven should return true for an even number" time="0.000" classname="should return true for an even number">
     </testcase>
     <testcase name="isNumberEven should return false for an odd number" time="0.000" classname="should return false for an odd number">
     </testcase>
