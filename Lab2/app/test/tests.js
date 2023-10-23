@@ -23,22 +23,22 @@ describe("add", function() {
 // Tests the isNumberEven function
 describe('isNumberEven', function() {
   it('should return true for an even number', function() {
-    assert.strictEqual(isNumberEven(2), false);
+    assert.strictEqual(testLogic.isNumberEven(2), false);
   });
 
   it('should return false for an odd number', function() {
-    assert.strictEqual(isNumberEven(3), false);
+    assert.strictEqual(testLogic.isNumberEven(3), false);
   });
 
   it('should return true for zero', function() {
-    assert.strictEqual(isNumberEven(0), true);
+    assert.strictEqual(testLogic.isNumberEven(0), true);
   });
 
   it('should return true for a negative even number', function() {
-    assert.strictEqual(isNumberEven(-4), true);
+    assert.strictEqual(testLogic.isNumberEven(-4), true);
   });
 
   it('should return false for a negative odd number', function() {
-    assert.strictEqual(isNumberEven(-7), false);
+    assert.strictEqual(testLogic.isNumberEven(-7), false);
   });
 });
