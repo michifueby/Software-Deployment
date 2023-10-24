@@ -20,6 +20,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const port = process.env.PORT || 8080;
+app.listen(port);
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
