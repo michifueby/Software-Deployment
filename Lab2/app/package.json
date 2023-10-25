@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./Lab2/app/bin/www",
+    "start": "node ./bin/www",
     "test": "mocha --recursive 'test/tests.js' --reporter mocha-junit-reporter"
   },
   "dependencies": {
