@@ -1,9 +1,4 @@
 # Lab2
-[Lab2](#lab2)
-- [Lab2](#lab2)
-  - [General](#general)
-  - [Info](#info)
-  - [Steps](#steps)
 
 ## General
 
