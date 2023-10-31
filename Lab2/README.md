@@ -1,6 +1,14 @@
+> [michifueby](https://github.com/michifueby) (Michael Füby)
+
 # Lab2
 
-## General
+- [Lab2](#lab2)
+  - [1. General](#1-general)
+  - [1.1. Info](#11-info)
+  - [1.2. Steps](#12-steps)
+
+
+## 1. General
 
 Building a DevOps pipeline based on Azuer DevOps using a Node.JS example.
 
@@ -9,13 +17,13 @@ Building a DevOps pipeline based on Azuer DevOps using a Node.JS example.
 - The Node.js application has to be equipped with test cases. In addition to the build pipeline, a release pipeline is also to be created, which ensures an automatic takeover of a release into production. 
 - This is to be equipped with a manual check and should not be released after each build. Finally, the application should include Azure Application Insights.
 
-## Info
+## 1.1. Info
 
 Links to the azure web apps:
 [Dev App](mfwebappnodejs-dev.azurewebsites.net)
 [Production App](mfwebappnodejs-prod.azurewebsites.net)
 
-## Steps
+## 1.2. Steps
 
 
 1. In the first step, a simple NodeJS application was created. Mathematical operators were implemented for the test cases and corresponding test cases were written. <br><br>
@@ -81,5 +89,8 @@ Links to the azure web apps:
 
       ![Successful Release](../Lab2/img/web-app-configuration.png) <br><br>
 
-12. After the release on production:å
+12. After the release on production:
     ![Successful Release](../Lab2/img/production-web-app.png) 
+
+13. At the end I activate the application insights for the production app
+    ![Successful Release](../Lab2/img/application-insights.png)
