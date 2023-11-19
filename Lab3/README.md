@@ -39,4 +39,8 @@ Part 2:
    Now all containers stopped
    ![Docker Containers stopped](../Lab3/img/docker-containers-stoped.png)
 
+## Used Links for Part 1
+- [Docker Docs](https://docs.docker.com/compose/gettingstarted/)
+
 ## Steps Part 2
+
