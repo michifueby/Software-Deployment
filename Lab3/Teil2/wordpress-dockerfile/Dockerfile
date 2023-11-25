@@ -1,37 +1,36 @@
 # Use the official Debian slim image as the base
-FROM debian:buster-slim
+FROM debian:buster
 
-# Set environment variables
-ENV WORDPRESS_DB_NAME='wordpress' \
-    WORDPRESS_DB_USER='user' \
-    WORDPRESS_DB_PASS='password' \
-    WORDPRESS_DB_HOST='localhost:3306' \
-    DEBIAN_FRONTEND=noninteractive
+ENV WORDPRESS_DB_NAME 'wordpress_db' \
+    WORDPRESS_DB_USER 'userdb' \
+    WORDPRESS_DB_PASS 'passworddb' \
+    WORDPRESS_DB_HOST 'localhost:3306'
 
-# Update and upgrade packages
-RUN apt-get update && \
-    apt-get upgrade -y
-
-# Install required packages
-RUN apt-get install -y --no-install-recommends \
-    wget \
-    apache2 \
-    php5 \
-    libapache2-mod-php5 \
-    php5-mcrypt \
-    php5-mysql \
-    unzip && \
-    rm -rf /var/lib/apt/lists/*
+# Update and upgrade packages, install required packages
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install -y --no-install-recommends \
+        wget \
+        ca-certificates \
+        apache2 \
+        php7.3 \
+        libapache2-mod-php7.3 \
+        php7.3-mysql \
+        php7.3-mbstring \
+        unzip \
+    && rm -rf /var/lib/apt/lists/*
 
 # Download and set up WordPress
 WORKDIR /var/www/html
-RUN wget https://wordpress.org/latest.zip && \
-    unzip -q latest.zip && \
-    chown -R www-data:www-data /var/www/html/wordpress && \
-    chmod -R 755 /var/www/html/wordpress && \
-    mkdir -p /var/www/html/wordpress/wp-content/uploads && \
-    chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads && \
-    rm latest.zip
+RUN wget -q https://wordpress.org/latest.zip \
+    && unzip -q latest.zip \
+    && chown -R www-data:www-data /var/www/html/wordpress \
+    && chmod -R 755 /var/www/html/wordpress \
+    && mkdir -p /var/www/html/wordpress/wp-content/uploads \
+    && chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads \
+    && rm latest.zip
+
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Expose Apache port
 EXPOSE 80/tcp
