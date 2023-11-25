@@ -18,7 +18,6 @@ Part 2:
 1. Create docker-compose.yaml file with two services "wordpress" and "MYSQL"<br><br>
    
 2. Enter the command ```docker compose up -d``` 
-   ![docker-compose command](../Lab3/img/docker-compose-up.png)<br><br>
    
 3. After this command, the services started
    You can check the status with ```docker ps```
@@ -33,7 +32,7 @@ Part 2:
 6. After the successful wordpress setup, the wordpress dashboard is available after login
    ![Wordpress Dashboard](../Lab3/img/wordpress-dashboard.png)
 
-5. At least with the command ```docker compose stop``` you can stop all services
+7. At least with the command ```docker compose stop``` you can stop all services
    ![Docker Compose Stop](../Lab3/img/docker-compose-stop.png)
 
    Now all containers stopped
@@ -43,4 +42,20 @@ Part 2:
 - [Docker Docs](https://docs.docker.com/compose/gettingstarted/)
 
 ## Steps Part 2
+
+1. Create the dockerfile for Wordpress and MYSQL
+
+2. After that I created the docker-compose.yaml file <br><br>
+   
+3. With the command ```docker-compose up -d``` we can build all services
+   
+4. After that the wordpress setup is under localhost/wordpress available
+   ![Wordpress Setup](../Lab3/img/wordpress-setup-part2.png)<br><br>
+   ![Wordpress Setup](../Lab3/img/wordpress-setup-part2-2.png)<br><br>
+   ![Wordpress Setup](../Lab3/img/wordpress-setup-part2-3.png)
+
+## Used Links for Part 2
+- [Docker Docs | Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+- [Docker Compose Build Command](https://docs.docker.com/engine/reference/commandline/compose_build/)
+
 
