@@ -1,3 +1,0 @@
-CREATE DATABASE IF NOT EXISTS wordpress_db;
-GRANT ALL PRIVILEGES ON wordpress_db.* TO 'userdb'@'%' IDENTIFIED BY 'passworddb';
-FLUSH PRIVILEGES;
