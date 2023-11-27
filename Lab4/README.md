@@ -23,7 +23,7 @@
    ![Azure Container Registry](../Lab4/img/azure-container-registry-2.png)
 
 2. Now we can create the with the az cli command 
-    ```az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 2 --generate-ssh-keys --attach-acr <acrName> ``` <br><br>
+    ```az aks create --resource-group <resource-group-name> --name <aks-cluster-name> --node-count 2 --generate-ssh-keys --attach-acr <acrName> ``` <br><br>
    Then the AKS resource are created:
    ![AKS](../Lab4/img/aks-resource.png)
 
@@ -54,7 +54,8 @@
    Delete the cluster with ```az group delete --name <resourceGroupName> --yes --no-wait```<br><br>
 
 6. You can access the website with the external IP
-   Also you can get the info with ```kubectl get services```
+   Also we can get the info with ```kubectl get services``` <br>
+   ![Running services](../Lab4/img/aks-services.png) <br>
    ![Running wordpress site](../Lab4/img/aks-wordpress-site.png) <br><br>
 
    After the wordpress setup we can see the wordpress dashboard
