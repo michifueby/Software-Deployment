@@ -6,7 +6,7 @@
 
 ## Steps Creation/Connection
 
-1. First, we must create a new resource for the azure container registry with azure cli command ```az acr create --resource-group <resource-group-name> --name $ACRNAME --sku Basic```
+1. First, we can create a new resource for the azure container registry with azure cli command ```az acr create --resource-group <resource-group-name> --name $ACRNAME --sku Basic```
    After that the created resource is in the Azure Portal available: 
    ![Azure Container Registry](../Lab4/img/azure-container-registry.png)
 
