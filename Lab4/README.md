@@ -39,21 +39,83 @@
 1. Now we are able to deploy an application to Azure Kubernetes Service (AKS) <br>
    Create the two .yaml-files: **mysql-deployment.yaml** and **wordpress-deployment.yaml** <br><br>
 
-2. Define a password by using the following command: ```kubectl create secret generic mysql-pass --from-literal=password=<passwordhere>``` <br><br>
+   The **mysql-deployment.yaml** defines Kubernetes resources for deploying a WordPress application with a MySQL database. 
+   Here is a summary:
 
-3. After that we can create pods with ```kubectl apply -f mysql-deployment.yaml``` and ```kubectl apply -f wordpress-deployment.yaml```
+   1. Service (wordpress-mysql):
+      - Type: Kubernetes Service
+      - Metadata: Name is "wordpress-mysql", labels are set to "app: wordpress".
+      - Specification:
+         - Opens the port 3306.
+         - Selects pods that correspond to the labels "app: wordpress" and "tier: mysql".
+         - The ClusterIP is set to "None".
 
-4. Then we must check if everything is running correctly with ```kubectl get services```
+   2. PersistentVolumeClaim (mysql-pv-claim):
+      - Type: Kubernetes PersistentVolumeClaim
+      - Metadata: Name is "mysql-pv-claim", Labels are set to "app: wordpress".
+      - Specification:
+         - Claims a persistent storage of 20 GB with read-write access.
+  
+   3. Deployment (wordpress-mysql):
+      - Type: Kubernetes Deployment
+      - Metadata: Name is "wordpress-mysql", labels are set to "app: wordpress".
+      - Specification:
+         - Selects pods with labels "app: wordpress" and "tier: mysql".
+         - Uses the "Recreate" strategy.
+         - Template Specification:
+            - Defines a container for MySQL version 5.6 with a root password from a secret key.
+            - Opens port 3306 in the container.
+            - Mounts a persistent store on "/var/lib/mysql".
+         - Uses a PersistentVolumeClaim with the name "mysql-pv-claim" for the persistent storage. <br><br>
+   
+   In summary, this creates a Kubernetes application for WordPress with a MySQL database. The MySQL service is accessible via the "wordpress-mysql" service and the data is stored on a persistent storage space of 20 GB. The deployment controller ensures that the desired number of pods are deployed with the MySQL application.<br><br>
+
+   The **wordpress-deployment.yaml** defines defines Kubernetes resources for deploying WordPress in a Kubernetes environment. 
+   Here is a short summary:
+
+   1. Service (wordpress-service.yaml):
+      - Type: Service
+      - Name: wordpress
+      - Labels: app=wordpress
+      - Ports: Forwards the traffic to port 80
+      - Selector: Selects pods with the labels app=wordpress and tier=frontend
+      - Type: LoadBalancer (enables external access to the service)
+
+   2. PersistentVolumeClaim (wordpress-pv-claim.yaml):
+      - Type: PersistentVolumeClaim
+      - Name: wp-pv-claim
+      - Labels: app=wordpress
+      - Access mode: ReadWriteOnce
+      - Resources: Requests 20 GB disk space
+
+   3. Deployment (wordpress-deployment.yaml):
+      - Type: Deployment
+      - Name: wordpress
+      - Labels: app=wordpress
+      - Selector: Selects pods with the labels app=wordpress and tier=frontend
+      - Strategy: Recreate (when updating, the existing pod is destroyed and recreated)
+      - Template: Defines the pod template with the required containers and configurations:
+      - Container: Uses the WordPress image (version 4.8-apache), sets environment variables for the database connection and the password secret key.
+        - Ports: Forwards traffic to port 80.
+        - VolumeMounts: Binds the PersistentVolumeClaim (wp-pv-claim) to the /var/www/html path in the container.
+
+      - Volumes: Uses the PersistentVolumeClaim (wp-pv-claim) as persistent storage for the WordPress container. <br><br>
+
+1. Define a password by using the following command: ```kubectl create secret generic mysql-pass --from-literal=password=<passwordhere>``` <br><br>
+
+2. After that we can create pods with ```kubectl apply -f mysql-deployment.yaml``` and ```kubectl apply -f wordpress-deployment.yaml```
+
+3. Then we must check if everything is running correctly with ```kubectl get services```
    ![Running services](../Lab4/img/aks-services.png) <br><br>
 
-5. At the end we can Start/Stop/Delete the Cluster
+4. At the end we can Start/Stop/Delete the Cluster
    Start the cluster with ```az aks start --name <clusterName> --resource-group <resourceGroupName>```<br><br>
 
    Stop the cluster with ```az aks stop --name <clusterName> --resource-group <resourceGroupName>```<br><br>
 
    Delete the cluster with ```az group delete --name <resourceGroupName> --yes --no-wait```<br><br>
 
-6. You can access the website with the external IP
+5. You can access the website with the external IP
    Also we can get the info with ```kubectl get services``` <br>
    ![Running services](../Lab4/img/aks-services.png) <br>
    ![Running wordpress site](../Lab4/img/aks-wordpress-site.png) <br><br>
